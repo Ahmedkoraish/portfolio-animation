@@ -25,7 +25,7 @@ export default function Hero() {
                 display: "flex",
                 flexDirection: { xs: "column-reverse", md: "row" },
                 gap: 2,
-                minHeight: { xs: "120vh", md: "100vh" },
+                minHeight: { xs: "90vh", md: "100vh" },
                 // bgcolor:"#f4f4f4",
 
             }}>
@@ -39,12 +39,12 @@ export default function Hero() {
                     alignItems: "flex-start",
                    
                 }}>
-                    <Typography variant="h5" color="primary" data-aos="fade-up"
+                    <Typography sx={{typography:{xs:"h6",md:"h5"} }} color="primary" data-aos="fade-up"
                         data-aos-delay="0">
                         Web Developer
                     </Typography>
-                    <Typography variant="h3" color="initial" data-aos="fade-up"
-                        data-aos-delay="200" sx={{ whiteSpace: "pre-line" }}>
+                    <Typography color="initial" data-aos="fade-up"
+                        data-aos-delay="200" sx={{ whiteSpace: "pre-line" ,typography:{xs:"h5",md:"h3"} }}>
                         {`Jackson 
                     Clark`}
                     </Typography>
@@ -67,8 +67,9 @@ export default function Hero() {
                             bgcolor: "primary.main",
                             color: "#fff",
                             borderRadius: 10,
-                            p: 2,
-                            mt: 2
+                            p: {xs:1,md:2},
+                            mt: 2,
+                            mb:3
                         }}
                         component={motion.button}
                         initial="initial"
@@ -88,7 +89,7 @@ export default function Hero() {
                             </motion.div>
 
                             {/* TEXT */}
-                            <Typography sx={{ display: "flex", alignItems: "center" }}>
+                            <Typography sx={{ display: "flex", alignItems: "center", }}>
                                 View Portfolio
                             </Typography>
 
@@ -125,10 +126,10 @@ export default function Hero() {
                     />
                     <Box sx={{
                         position: "absolute",
-                        bottom: "50px",
+                        // bottom: "50px",
+                        bottom:0
 
-
-                        // bgcolor: "red"
+                 
                     }}>
                         <img src={human} alt="" data-aos="zoom-in"
                             style={{
