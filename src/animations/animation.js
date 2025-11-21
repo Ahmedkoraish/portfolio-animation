@@ -3,3 +3,13 @@ export const fadeUpVariant = {
   animate: { opacity: 1, y: 0 },
   transition: { duration: 0.9, ease: "easeOut" },
 };
+
+export const containerVariant = {
+  initial: {},
+  animate: {
+    transition: {
+      staggerChildren: 0.3, 
+    },
+  },
+};
+ 

@@ -37,14 +37,14 @@ export default function Hero() {
                     flexDirection: "column",
                     justifyContent: "center",
                     alignItems: "flex-start",
-                   
+
                 }}>
-                    <Typography sx={{typography:{xs:"h6",md:"h5"} }} color="primary" data-aos="fade-up"
+                    <Typography sx={{ typography: { xs: "h6", md: "h5" } }} color="primary" data-aos="fade-up"
                         data-aos-delay="0">
                         Web Developer
                     </Typography>
                     <Typography color="initial" data-aos="fade-up"
-                        data-aos-delay="200" sx={{ whiteSpace: "pre-line" ,typography:{xs:"h5",md:"h3"} }}>
+                        data-aos-delay="200" sx={{ whiteSpace: "pre-line", typography: { xs: "h5", md: "h3" } }}>
                         {`Jackson 
                     Clark`}
                     </Typography>
@@ -67,9 +67,9 @@ export default function Hero() {
                             bgcolor: "primary.main",
                             color: "#fff",
                             borderRadius: 10,
-                            p: {xs:1,md:2},
+                            p: { xs: 1, md: 2 },
                             mt: 2,
-                            mb:3
+                            mb: 3
                         }}
                         component={motion.button}
                         initial="initial"
@@ -77,15 +77,15 @@ export default function Hero() {
                     >
                         <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
 
-                           
+
                             <motion.div
-                                style={{ display: "flex", alignItems: "center" }}   
+                                style={{ display: "flex", alignItems: "center" }}
                                 variants={{
                                     initial: { x: -15, opacity: 0 },
                                     hover: { x: 0, opacity: 1 },
                                 }}
                             >
-                                <ArrowRightAltIcon sx={{ fontSize: 28 }} />        
+                                <ArrowRightAltIcon sx={{ fontSize: 28 }} />
                             </motion.div>
 
                             {/* TEXT */}
@@ -93,9 +93,9 @@ export default function Hero() {
                                 View Portfolio
                             </Typography>
 
-                           
+
                             <motion.div
-                                style={{ display: "flex", alignItems: "center" }}    
+                                style={{ display: "flex", alignItems: "center" }}
                                 variants={{
                                     initial: { x: 0, opacity: 1 },
                                     hover: { x: 15, opacity: 0 },
@@ -127,9 +127,9 @@ export default function Hero() {
                     <Box sx={{
                         position: "absolute",
                         // bottom: "50px",
-                        bottom:0
+                        bottom: 0
 
-                 
+
                     }}>
                         <img src={human} alt="" data-aos="zoom-in"
                             style={{
