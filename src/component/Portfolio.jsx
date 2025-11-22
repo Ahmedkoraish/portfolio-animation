@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Container from '@mui/material/Container'
 import Typography from '@mui/material/Typography'
 import { Box, Button } from '@mui/material'
@@ -14,22 +14,48 @@ import img6 from "../assets/all/tab-image-6.png"
 
 export default function Portfolio() {
 
-    const gallery = [
-        { id: 1, title: "Development", des: "A Journey through my work", image: img1 },
+    const gallery = {
+        All: [{ id: 1, title: "Development", des: "A Journey through my work", image: img1 },
         { id: 2, title: "Development", des: "A Journey through my work", image: img2 },
         { id: 3, title: "Development", des: "A Journey through my work", image: img3 },
         { id: 4, title: "Development", des: "A Journey through my work", image: img4 },
         { id: 5, title: "Development", des: "A Journey through my work", image: img5 },
-        { id: 6, title: "Development", des: "A Journey through my work", image: img6 },
-    ]
+        { id: 6, title: "Development", des: "A Journey through my work", image: img6 }],
+        Branding: [{ id: 1, title: "Development", des: "A Journey through my work", image: img6 },
+        { id: 2, title: "Development", des: "A Journey through my work", image: img5 },
+        { id: 3, title: "Development", des: "A Journey through my work", image: img4 },
+        { id: 4, title: "Development", des: "A Journey through my work", image: img3 },
+        { id: 5, title: "Development", des: "A Journey through my work", image: img2 },
+        { id: 6, title: "Development", des: "A Journey through my work", image: img1 }],
+        Design: [{ id: 1, title: "Development", des: "A Journey through my work", image: img5 },
+        { id: 2, title: "Development", des: "A Journey through my work", image: img1 },
+        { id: 3, title: "Development", des: "A Journey through my work", image: img3 },
+        { id: 4, title: "Development", des: "A Journey through my work", image: img2 },
+        { id: 5, title: "Development", des: "A Journey through my work", image: img4 },
+        { id: 6, title: "Development", des: "A Journey through my work", image: img6 }],
+        Content: [{ id: 1, title: "Development", des: "A Journey through my work", image: img1 },
+        { id: 2, title: "Development", des: "A Journey through my work", image: img2 },
+        { id: 3, title: "Development", des: "A Journey through my work", image: img3 },
+        { id: 4, title: "Development", des: "A Journey through my work", image: img4 },
+        { id: 5, title: "Development", des: "A Journey through my work", image: img5 },
+        { id: 6, title: "Development", des: "A Journey through my work", image: img6 }],
+        Marketing: [{ id: 1, title: "Development", des: "A Journey through my work", image: img4 },
+        { id: 2, title: "Development", des: "A Journey through my work", image: img1 },
+        { id: 3, title: "Development", des: "A Journey through my work", image: img3 },
+        { id: 4, title: "Development", des: "A Journey through my work", image: img2 },
+        { id: 5, title: "Development", des: "A Journey through my work", image: img5 },
+        { id: 6, title: "Development", des: "A Journey through my work", image: img6 }],
+    }
 
     const btns = ["All", "Branding", "Design", "Content", "Marketing"];
 
-    // Overlay animation: slide up on hover
     const overlayVariant = {
         hidden: { y: "100%", opacity: 0 },
         show: { y: 0, opacity: 1, transition: { duration: 0.4 } },
     };
+
+    const [isActive, setIsActive] = useState("All")
+
 
     return (
         <Container
@@ -37,14 +63,14 @@ export default function Portfolio() {
             variants={containerVariant}
             initial="initial"
             whileInView="animate"
-            viewport={{ once: false, amount: 0.3 }}
+            viewport={{ once: true, amount: 0.3 }}
         >
             {/* Heading */}
             <Box sx={{ textAlign: "center", mb: 4 }}>
                 <Typography component={motion.div} variants={fadeUpVariant} variant="body1" color="primary">
                     Latest Portfolio
                 </Typography>
-                <Typography component={motion.div} variants={fadeUpVariant} sx={{ fontSize: "48px", my: 1 }} variant="h2" color="initial">
+                <Typography component={motion.div} variants={fadeUpVariant} sx={{ fontSize: { xs: "28px", sm: "36px", md: "48px" }, }} color="initial">
                     Transforming Ideas into Exceptional
                 </Typography>
                 <Typography component={motion.div} variants={fadeUpVariant} variant="body1" color="secondary" sx={{ whiteSpace: "break-spaces" }}>
@@ -53,26 +79,39 @@ export default function Portfolio() {
                 </Typography>
             </Box>
 
-            {/* Filter Buttons */}
-            <Box sx={{ display: "flex", justifyContent: "center", mb: 4 }}>
+            {/* Buttons */}
+            <Box  component={motion.div} variants={fadeUpVariant}  sx={{ display: "flex", flexWrap: "wrap", justifyContent: "center", mb: 4 }}>
                 {btns.map((btn) => (
-                    <Button key={btn}>{btn}</Button>
+                    <Button
+                        key={btn}
+                        onClick={() => setIsActive(btn)}
+                        sx={{
+                            fontSize: "18px" ,
+                            bgcolor: isActive===btn ? "primary.main" :"#f4f4f4",
+                            color: isActive===btn ? "#fff" :"black",
+                            mx:1,
+                            px:{xs:1,md:2},
+                            borderRadius:4
+                        }}
+                    >
+                        {btn}
+                    </Button>
                 ))}
             </Box>
 
             {/* Gallery */}
-            <Box sx={{ display: 'flex', flexWrap: "wrap", gap: 2 }}>
-                {gallery.map((card) => (
+            <Box component={motion.div} variants={fadeUpVariant}  sx={{ display: 'flex', flexWrap: "wrap", gap: 2 }}>
+                {gallery[isActive].map((card) => (
                     <Box
                         component={motion.div}
                         key={card.id}
-                        whileHover="show" // triggers overlay
-                        initial="hidden" // default state
+                        whileHover="show"
+                        initial="hidden"
                         sx={{
                             width: { xs: "100%", sm: "calc(50% - 16px)", lg: "calc(33.33% - 16px)" },
                             position: "relative",
                             borderRadius: 2,
-                            overflow: "hidden", // keep overlay inside card
+                            overflow: "hidden",
                         }}
                     >
                         {/* Card Image */}
@@ -85,7 +124,7 @@ export default function Portfolio() {
                         {/* Overlay */}
                         <Box
                             component={motion.div}
-                            variants={overlayVariant} // apply animation
+                            variants={overlayVariant}
                             sx={{
                                 position: "absolute",
                                 top: 0,
@@ -93,14 +132,14 @@ export default function Portfolio() {
                                 width: "100%",
                                 height: "100%",
                                 background:
-                                "linear-gradient(0deg, rgba(253,196,72,0) 15.49%, rgba(253,196,72,1) 100%)",
+                                    "linear-gradient(0deg, rgba(253,196,72,0) 15.49%, rgba(253,196,72,1) 100%)",
                                 display: "flex",
-                                justifyContent: "flex-end", 
+                                justifyContent: "flex-end",
                                 alignItems: "flex-start",
                                 color: "#fff",
-                                flexDirection: "column",         
+                                flexDirection: "column",
                                 p: 3,
-                                
+
                             }}
                         >
                             <Typography variant="h6" sx={{ mb: 1 }}>{card.title}</Typography>
