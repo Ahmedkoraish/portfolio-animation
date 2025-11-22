@@ -33,7 +33,7 @@ export default function Experts() {
 
     return (
         <>
-            <Box sx={{ bgcolor: "#f4f4f4", borderRadius: 8, my: 2, py: { xs: 4, m: 8 } }}>
+            <Box sx={{ bgcolor: "##f4f4f4", borderRadius: 8, my: 2, py: { xs: 4, m: 8 } }}>
                 <Container>
                     {/* text area */}
                     <Box>
