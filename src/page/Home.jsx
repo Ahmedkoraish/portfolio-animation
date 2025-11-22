@@ -4,6 +4,7 @@ import Text from '../component/Text'
 import About from '../component/About '
 import Portfolio from '../component/Portfolio'
 import Experts from '../component/Experts'
+import Testimonial from '../component/Testimonial'
 
 export default function Home() {
     return <>
@@ -12,5 +13,6 @@ export default function Home() {
         <About/>
         <Portfolio/>
         <Experts/>
+        <Testimonial/>
     </>
 }
