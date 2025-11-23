@@ -96,13 +96,14 @@ export default function Price() {
                 between Remote`}
           </Typography>
         </Box>
+
         {/* cards */}
         <Box
           component={motion.div}
           variants={containerVariant}
           initial="hidden"
-          whileInView="show" 
-          viewport={{ once: true, amount: 0.3 }} 
+          whileInView="show"
+          viewport={{ once: true, amount: 0.3 }}
           sx={{ display: "flex", flexWrap: "wrap", gap: 3 }}
         >
           {cards.map((card, index) => (
@@ -114,11 +115,12 @@ export default function Price() {
                 width: { xs: "100%", sm: "45%", md: "30%" },
                 bgcolor: "#f4f4f4",
                 borderRadius: 4,
-                px: 5,
-                py: 8,
+                px: { xs: 2, sm: 4, md: 5 },
+                py: { xs: 4, sm: 6, md: 8 },
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "center",
+
                 borderRight: "2px solid",
                 borderRightColor: "primary.main",
                 borderBottom: "2px solid",
@@ -126,7 +128,10 @@ export default function Price() {
               }}
             >
               <AccountBalanceIcon
-                sx={{ color: "primary.main", fontSize: "100px" }}
+                sx={{
+                  color: "primary.main",
+                  fontSize: { xs: "70px", sm: "80px", md: "100px" },
+                }}
               />
 
               <Typography
@@ -176,7 +181,6 @@ export default function Price() {
               <Typography variant="body1" color="initial">
                 {card.duration}
               </Typography>
-
               <Button
                 sx={{
                   bgcolor: "primary.main",
@@ -185,6 +189,8 @@ export default function Price() {
                   p: { xs: 1, md: 1 },
                   mt: 2,
                   textTransform: "none",
+
+                  overflow: "hidden", 
                 }}
                 component={motion.button}
                 initial="initial"
