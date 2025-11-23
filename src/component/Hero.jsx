@@ -7,6 +7,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { motion } from "framer-motion";
 import { useEffect } from "react";
+import Nav from '../component/Nav';
 
 export default function Hero() {
     useEffect(() => {
@@ -21,6 +22,7 @@ export default function Hero() {
         <Box sx={{
             bgcolor: "#f4f4f4"
         }}>
+            <Nav/>
             <Container sx={{
                 display: "flex",
                 flexDirection: { xs: "column-reverse", md: "row" },
