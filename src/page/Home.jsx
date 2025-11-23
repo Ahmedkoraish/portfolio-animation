@@ -6,6 +6,7 @@ import Portfolio from '../component/Portfolio'
 import Experts from '../component/Experts'
 import Testimonial from '../component/Testimonial'
 import Skill from '../component/Skill'
+import Recent from '../component/Recent'
 
 export default function Home() {
     return <>
@@ -16,5 +17,6 @@ export default function Home() {
         <Experts/>
         <Testimonial/>
         <Skill/>
+        <Recent/>
     </>
 }
