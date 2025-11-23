@@ -7,6 +7,7 @@ import Experts from '../component/Experts'
 import Testimonial from '../component/Testimonial'
 import Skill from '../component/Skill'
 import Recent from '../component/Recent'
+import Price from '../component/Price'
 
 export default function Home() {
     return <>
@@ -18,5 +19,6 @@ export default function Home() {
         <Testimonial/>
         <Skill/>
         <Recent/>
+        <Price/>
     </>
 }
