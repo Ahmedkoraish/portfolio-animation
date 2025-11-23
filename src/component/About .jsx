@@ -17,7 +17,7 @@ export default function About() {
                 variants={fadeUpVariant}
                 initial="initial"
                 whileInView="animate"
-                viewport={{ once: false, amount: 0.3 }}
+                viewport={{ once: true, amount: 0.3 }}
                 sx={{
                     display: "flex",
                     flexDirection: { xs: "column", md: "row" },
