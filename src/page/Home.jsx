@@ -8,6 +8,9 @@ import Testimonial from '../component/Testimonial'
 import Skill from '../component/Skill'
 import Recent from '../component/Recent'
 import Price from '../component/Price'
+import Contact from '../component/Contact'
+import Footer from '../component/footer'
+
 
 export default function Home() {
     return <>
@@ -20,5 +23,7 @@ export default function Home() {
         <Skill/>
         <Recent/>
         <Price/>
+        <Contact/>
+        <Footer/>
     </>
 }
